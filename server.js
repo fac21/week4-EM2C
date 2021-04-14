@@ -69,7 +69,7 @@ server.post("/", bodyParser, (request, response) => {
     //const name = newMessage.name.toLowerCase();
     articles[message] = newMessage;
     //articles[name] = newName;
-    console.log({articles});
+    //console.log({articles});
     response.redirect("/articles");
 });
 

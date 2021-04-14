@@ -1,4 +1,5 @@
 let articles = {
+    username: {message: 'text', name: 'text'}
 
 };
 
