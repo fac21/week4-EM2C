@@ -12,10 +12,18 @@ font-family: 'Roboto Condensed', sans-serif;
 font-weight: 300;
 }
 
+.nav-button {
+    position: absolute;
+    bottom: 1rem;
+    left: 1rem;
+    margin: 1rem 1.5rem;
+    line-height: 1rem;
+}
+
 img {
     margin: 1rem;
     min-width: 150px;
-    width: 15vw;
+    width: 10vw;
 }
 
 .article {
@@ -23,7 +31,7 @@ img {
     display: inline-block;
     background-color: #e7ecef;
     padding: 1.5rem;
-    margin: 1rem 0.5rem;
+    margin: 1.5rem 1rem;
     border-radius: 0.6rem;
     box-shadow: 0 0 0.2rem #001427;
     max-width: 50%;
@@ -87,4 +95,30 @@ img {
     left: 8%;
     bottom: -1.5rem;
     animation: 0.2s wiggle infinite;
+}
+
+@keyframes wiggle-horizontal {
+    0% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(20deg)
+    }
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+.filo:nth-child(5) {
+    left: -1.1rem;
+    top: 15%;
+    transform: rotate(0deg);
+    animation: 0.2s wiggle-horizontal infinite;
+}
+
+.filo:nth-child(6) {
+    right: -1.1rem;
+    bottom: 15%;
+    transform: rotate(0deg);
+    animation: 0.2s wiggle-horizontal 0.1s infinite;
 }
