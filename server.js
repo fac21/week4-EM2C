@@ -20,11 +20,11 @@ server.get("/", (request, response) => {
             <img src="micro-logo.png" alt="Micro Blog Logo">
             <form method="POST">
                 <label for = 'message'>Sample information:</label>
-                <input id = 'message' name="message" placeholder = 'message'/>
-
+                <! --  <input id = 'message' name="message" placeholder = 'message'/>
+                <textarea rows="8" id = 'message' name="message" placeholder="message..."></textarea>
                 <label for = 'name'>Specimen name:</label>
                 <input id = 'name' name="name" placeholder = 'name'/>
-
+                
                 <button>Submit</button>
             </form>
             <input type="button" class="nav-button" onclick="location.href='http://localhost:3000/articles';" value="Navigate to Articles" />

@@ -24,6 +24,11 @@ img {
     width: 18vw;
 }
 
+textarea {
+    resize: none;
+    border-bottom: grey;
+}
+
 form {
     display: flex;
     flex-direction: column;
