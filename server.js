@@ -27,7 +27,7 @@ server.get("/", (request, response) => {
 
                 <button>Submit</button>
             </form>
-        
+            <input type="button" onclick="location.href='http://localhost:3000/articles';" value="Navigate to Articles" />
         </body>
 </html>
     `
@@ -66,6 +66,9 @@ server.get('/articles', (request, response) => {
             <title>microblog</title>
         </head>
         <body>
+            <nav>
+            <input type="button" onclick="location.href='http://localhost:3000';" value="Back to Input Page" />
+            </nav>
             <img src="micro-logo.png">
 
             <ul>${items}</ul>
