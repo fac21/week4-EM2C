@@ -44,8 +44,10 @@ server.get('/articles', (request, response) => {
         items += `
 
         <li class="article">
-        <div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div>
-        <p class="article-message">"${article.message}"</p>
+
+        <div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div>
+        <p class="article-message">${article.message}</p>
+
           <form class="deletform" action="/delete-article" method="POST" style="display: inline;">
 
             <button name="name" value="${article.message}" aria-label="Delete ${article.message}">
