@@ -26,6 +26,8 @@ img {
     width: 10vw;
 }
 
+/* cells */
+
 .article {
     position: relative;
     display: inline-block;
@@ -54,6 +56,18 @@ img {
     right: 0.5rem;
     font-weight: 400;
 }
+
+.nucleus {
+    position: absolute;
+    top: 20%;
+    left: 20%;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    border: solid #001427;
+    opacity: 0.1;
+}
+/* filopodia for cells */
 
 .filo {
     position: absolute;
