@@ -45,3 +45,17 @@ it("can submit multiple pieces of information", () => {
 // it("can navigate with back button", () => {
 //     cy.visit("http://localhost:3000");
 //   });
+
+it("can delet article", () => {
+  cy.visit("/");
+  cy.get("#message").type("information");
+  cy.get("#name").type("my name");
+  cy.get('form').submit();
+  cy.visit("http://localhost:3000/articles");
+  cy.get("p").contains("information")
+  cy.get("button[value='information']").parent().click();
+  // cy.get("form p").should('not.exist');
+  cy.get("p").contains("information").should('not.exist');
+ cy.get("span").contains("my name").should('not.exist');
+
+});

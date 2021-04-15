@@ -44,12 +44,12 @@ server.get('/articles', (request, response) => {
         items += `
         <li>
           <span>${article.name}</span>
-          <form action="/delete-article" method="POST" style="display: inline;">
+          <form class="deletform" action="/delete-article" method="POST" style="display: inline;">
             <button name="name" value="${article.message}" aria-label="Delete ${article.message}">
               &times;
             </button>
           </form>
-          <p>${article.message}</p>
+          <p >${article.message}</p>
         </li>`;
 
         
