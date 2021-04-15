@@ -39,7 +39,19 @@ server.get('/articles', (request, response) => {
     let items = "";
     for (const article of Object.values(articles)) {
         
-          items += `<li>${article.message} ${article.name}</li>`;
+        //   items += `<li>${article.message} ${article.name}</li>`;
+
+        items += `
+        <li>
+          <span>${article.name}</span>
+          <form action="/delete-article" method="POST" style="display: inline;">
+            <button name="name" value="${article.message}" aria-label="Delete ${article.message}">
+              &times;
+            </button>
+          </form>
+          <p>${article.message}</p>
+        </li>`;
+
         
       }
 
@@ -85,6 +97,17 @@ server.post("/", bodyParser, (request, response) => {
 //    // articles[name] = name2;
 //     response.redirect("/articles");
 // });
+
+/***************** DELET************************ */
+
+server.post("/delete-article", bodyParser, (request, response) => {
+    const nameToDelete = request.body.name.toLowerCase();
+    delete articles[nameToDelete];
+    response.redirect("/articles");
+  });
+
+/***************************************** */
+
 
 const PORT = 3000;
 
