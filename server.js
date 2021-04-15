@@ -1,7 +1,9 @@
 const express = require("express");
 const articles = require('./articles');
-
+const staticHandler = express.static("public")
 const server = express();
+
+server.use(staticHandler)
 
 server.get("/", (request, response) => {
 
@@ -9,12 +11,13 @@ server.get("/", (request, response) => {
     <!DOCTYPE html>
     <html lang="en">
         <head>
+            <link rel="stylesheet" href="main-style.css">
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>microblog</title>
         </head>
         <body>
-            <h1>#</h1>
+            <img src="micro-logo.png">
             <form method="POST">
                 <label for = 'message'>Enter your thoughts</label>
                 <input id = 'message' name="message" placeholder = 'message'/>
