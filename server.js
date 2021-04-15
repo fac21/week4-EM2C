@@ -19,10 +19,10 @@ server.get("/", (request, response) => {
         <body>
             <img src="micro-logo.png">
             <form method="POST">
-                <label for = 'message'>Enter your thoughts</label>
+                <label for = 'message'>Sample information:</label>
                 <input id = 'message' name="message" placeholder = 'message'/>
 
-                <label for = 'name'>Name</label>
+                <label for = 'name'>Specimen name:</label>
                 <input id = 'name' name="name" placeholder = 'name'/>
 
                 <button>Submit</button>
@@ -42,14 +42,15 @@ server.get('/articles', (request, response) => {
         //   items += `<li>${article.message} ${article.name}</li>`;
 
         items += `
-        <li>
-          <span>${article.name}</span>
+        <li class="article">
+        <div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div>
+        <p class="article-message">"${article.message}"</p>
           <form action="/delete-article" method="POST" style="display: inline;">
             <button name="name" value="${article.message}" aria-label="Delete ${article.message}">
               &times;
             </button>
+            <span class="article-name"><i>- ${article.name}</i></span>
           </form>
-          <p>${article.message}</p>
         </li>`;
 
         
@@ -59,13 +60,14 @@ server.get('/articles', (request, response) => {
     <!DOCTYPE html>
     <html lang="en">
         <head>
+            <link rel="stylesheet" href="articles-style.css">
             <meta charset="UTF-8" />
             <meta name="viewport" content="width=device-width, initial-scale=1" />
             <title>microblog</title>
         </head>
         <body>
-            <h1>#</h1>
-            
+            <img src="micro-logo.png">
+
             <ul>${items}</ul>
         </body>
 </html>
