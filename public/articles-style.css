@@ -55,6 +55,7 @@ img {
     bottom: 0.2rem;
     right: 0.5rem;
     font-weight: 400;
+    overflow: scroll;
 }
 
 .nucleus {
@@ -65,8 +66,9 @@ img {
     width: 2rem;
     border-radius: 50%;
     border: solid #001427;
-    opacity: 0.1;
+    opacity: 0.15;
 }
+
 /* filopodia for cells */
 
 .filo {

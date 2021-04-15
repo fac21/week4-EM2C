@@ -17,7 +17,7 @@ server.get("/", (request, response) => {
             <title>microblog</title>
         </head>
         <body>
-            <img src="micro-logo.png">
+            <img src="micro-logo.png" alt="Micro Blog Logo">
             <form method="POST">
                 <label for = 'message'>Sample information:</label>
                 <input id = 'message' name="message" placeholder = 'message'/>
@@ -47,6 +47,7 @@ server.get('/articles', (request, response) => {
         <div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div><div class="filo">~</div>
         <div class="nucleus"></div>
         <p class="article-message">"${article.message}"</p>
+
           <form class="deletform" action="/delete-article" method="POST" style="display: inline;">
 
             <button name="name" value="${article.message}" aria-label="Delete ${article.message}">
@@ -70,7 +71,7 @@ server.get('/articles', (request, response) => {
             <title>microblog</title>
         </head>
         <body>
-            <img src="micro-logo.png">
+            <img src="micro-logo.png" alt="Micro Blog Logo">
             <nav>
             <input type="button" class="nav-button" onclick="location.href='http://localhost:3000';" value="Back to Input Page" />
             </nav>
