@@ -2,7 +2,7 @@ const express = require("express");
 const articles = require('./articles');
 const staticHandler = express.static("public")
 const server = express();
-
+const message;
 server.use(staticHandler)
 
 server.get("/", (request, response) => {
@@ -87,26 +87,13 @@ server.get('/articles', (request, response) => {
 const bodyParser = express.urlencoded({ extended: false });
 
 server.post("/", bodyParser, (request, response) => {
-    const newMessage = request.body;
-    //const newName = request.body;
-    console.log(newMessage);
-    const message = newMessage.message.toLowerCase();
-    //const name = newMessage.name.toLowerCase();
-    articles[message] = newMessage;
-    //articles[name] = newName;
-    //console.log({articles});
+   message = request.body.message.toLowerCase();
+    articles[message] = request.body;
+   
     response.redirect("/articles");
 });
 
-// server.post("/", bodyParser, (request, response) => {
-//     const newMessage = request.body;
-//     console.log({newMessage});
-//     const message2 = newMessage.message.toLowerCase();
-//     //const name2 = newMessage.name.toLowerCase();
-//    // articles[message] = message2;
-//    // articles[name] = name2;
-//     response.redirect("/articles");
-// });
+
 
 /***************** DELET************************ */
 
