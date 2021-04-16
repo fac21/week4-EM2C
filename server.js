@@ -27,7 +27,7 @@ server.get("/", (request, response) => {
                 
                 <button>Submit</button>
             </form>
-            <input type="button" class="nav-button" onclick="location.href='http://localhost:3000/articles';" value="Navigate to Articles" />
+            <input type="button" class="nav-button" onclick="location.href='https://whispering-sierra-27034.herokuapp.com/articles';" value="Navigate to Articles" />
         </body>
 </html>
     `
@@ -73,7 +73,7 @@ server.get('/articles', (request, response) => {
         <body>
             <img src="micro-logo.png" alt="Micro Blog Logo">
             <nav>
-            <input type="button" class="nav-button" onclick="location.href='http://localhost:3000';" value="Back to Input Page" />
+            <input type="button" class="nav-button" onclick="location.href='https://whispering-sierra-27034.herokuapp.com/';" value="Back to Input Page" />
             </nav>
 
             <ul>${items}</ul>
