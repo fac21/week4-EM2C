@@ -2,6 +2,7 @@ const express = require("express");
 const articles = require('./articles');
 const staticHandler = express.static("public")
 const server = express();
+const message;
 const bodyParser = express.urlencoded({ extended: false });
 
 server.use(staticHandler)
@@ -81,13 +82,12 @@ server.get('/articles', (request, response) => {
 });
 
 server.post("/", bodyParser, (request, response) => {
-    const newMessage = request.body;
-    const message = newMessage.message.toLowerCase();
-    articles[message] = newMessage;
+
+   message = request.body.message.toLowerCase();
+    articles[message] = request.body;
+   
     response.redirect("/articles");
 });
-
-/***************** DELETE************************ */
 
 server.post("/delete-article", bodyParser, (request, response) => {
     const nameToDelete = request.body.name.toLowerCase();
