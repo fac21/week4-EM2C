@@ -2,7 +2,6 @@ const express = require("express");
 const articles = require('./articles');
 const staticHandler = express.static("public")
 const server = express();
-const message;
 server.use(staticHandler)
 
 server.get("/", (request, response) => {
@@ -87,7 +86,7 @@ server.get('/articles', (request, response) => {
 const bodyParser = express.urlencoded({ extended: false });
 
 server.post("/", bodyParser, (request, response) => {
-   message = request.body.message.toLowerCase();
+  const message = request.body.message.toLowerCase();
     articles[message] = request.body;
    
     response.redirect("/articles");
